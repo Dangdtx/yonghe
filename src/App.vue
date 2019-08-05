@@ -8,7 +8,7 @@
 <script> 
 import TabBar from "common/tabBar" 
  import http from "utils/http.js" 
-
+ 
 
 export default {
   name:"App",
@@ -16,11 +16,12 @@ export default {
     TabBar, 
   },
   created(){
-    http("get","/server/content/unionHead.json").then((data) => {
+    
+  // https://m.228.cn/server/person/order/list.json
+    http("get","/server/subject/detail-xiechunhua0621.json").then((data)=>{
       console.log(data)
-    }).catch((err) => {
-      console.log(err)
-    });
+    })
+
   }
   
 }
