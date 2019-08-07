@@ -119,7 +119,8 @@
     <h3 class="con-tit mb15 mt15">
       <b>演出详情</b>
     </h3>
-    <div id="attentionShow" class="need-attention show-details show-notices-imgs">
+    <div id="attentionShow" class="need-attention show-details show-notices-imgs">{{activeDetail}}</div>
+    <!-- <div id="attentionShow" class="need-attention show-details show-notices-imgs">
       <p style="text-indent:2em;">
         <span style="text-indent:2em;">演出时长：不低于90分钟；演唱曲目：不低于20首</span>
       </p>
@@ -170,7 +171,7 @@
       >
         <img src="http://static.228.cn/upload/Image/201907/1563849540801_1677_x.jpg" />
       </p>
-    </div>
+    </div> -->
     <div class="tc mt15 mb20">
       <a id="attentionBtn" class="look-more">收起</a>
     </div>
@@ -216,11 +217,28 @@
         <a href="javascript:;" class="btn gradual-red white">立即购买</a>
       </div>
     </div>
+    <Footer /> 
   </div>
 </template>
 
 <script>
-export default {};
+import {detail_trick} from "api/detail.js"
+export default {
+  name:"Detail",
+  async created(){
+    let data = await  detail_trick()
+      console.log(data)
+     this.activeDetail = data.data.product.INTRODUCTION
+     
+     console.log( this.activeDetail )  
+  },
+  data(){
+    return  {
+      
+      activeDetail: "",
+    }
+  }
+};
 </script>
 
 <style scoped>

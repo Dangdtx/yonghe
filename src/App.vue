@@ -1,6 +1,7 @@
 <template>
   <div id="app"> 
     <router-view></router-view>
+    
     <TabBar />  
   </div>
 </template>
@@ -18,9 +19,9 @@ export default {
   created(){
     
   // https://m.228.cn/server/person/order/list.json
-    http("get","/server/subject/detail-xiechunhua0621.json").then((data)=>{
-      console.log(data)
-    })
+    // http("get","/server/subject/detail-xiechunhua0621.json").then((data)=>{
+    //   console.log(data)
+    // })
 
   }
   

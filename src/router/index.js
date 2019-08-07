@@ -7,17 +7,27 @@ import mine from "./mine";
 import register from "./register"; 
 import login from "./login"
 import detail from "./detail"
+import order from "./order"
+import activies from "./activies"
+import list from "./list"
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
     routes:[
+        {
+            path:"/",
+            redirect:"/home",
+        },
         home,
         sort,
         search,
         mine, 
         register, 
         login,
-        detail
+        detail,
+        order,
+        activies,
+        list
     ]
 })
